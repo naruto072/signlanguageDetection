@@ -1,4 +1,4 @@
-from detect import detect
+#from detect import detect
 from flask import Flask, json, request, jsonify
 import os,json,pickle
 import urllib.request
@@ -19,10 +19,10 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 @app.route('/api/upload', methods=['POST','GET'])
 def upload_image():
-	d = pickle.loads(json.loads(request.data).encode('latin-1'))
-	res = detect(d)
+	#d = pickle.loads(json.loads(request.data).encode('latin-1'))
+	#res = detect(d)
 	resp = jsonify({
-			'prediction' : res,
+			'prediction' : 'res',
 			'status' : True,
 			'message' : 'Images successfully uploaded'})
 	resp.status_code = 200
